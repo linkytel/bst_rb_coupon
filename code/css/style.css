@@ -2,210 +2,229 @@
 /*Start common*/
 *,
 *::before,
-*::after {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box; }
-
-html, body, p, ul, li, a {
-    margin: 0;
-    padding: 0; }
-
-html {
-    width: 100%;
-    outline: none;
-    border: 0; }
-
-body {
-    width: 100%;
-    font-weight: normal;
-    font-family: "Microsoft Yahei"; }
-
-li {
-    list-style-type: none; }
-
-a {
-    text-decoration: none; }
-a:visited, a:link, a:focus, a:hover, a:active {
-    text-decoration: none; }
-
-img {
-    vertical-align: middle; }
-
-.hidden {
-    visibility: hidden; }
-
-.hide {
-    display: none; }
-
-/*清除浮动*/
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
-.clearfix {
-  display: inline-block;
-}
-
-.clearfix {
-  display: block;
-}
-
+*::after{
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box; }
+html, body, p, ul, li, a{
+    margin:0;
+    padding:0; }
+html{
+    width:100%;
+    outline:none;
+    border:0; }
+body{
+    width:100%;
+    font-weight:normal;
+    font-family:"Microsoft Yahei"; }
+li{
+    list-style-type:none; }
+a{
+    text-decoration:none; }
+a:visited, a:link, a:focus, a:hover, a:active{
+    text-decoration:none; }
+img{
+    vertical-align:middle; }
+.hidden{
+    visibility:hidden; }
+.hide{
+    display:none; }
 /*End common*/
-/*button style start*/
-.bestpay-button {
-    font-family: inherit;
-    text-decoration: none;
-    width: 8.666667rem;
-    height: 1.2rem;
-    line-height: 1.2rem;
-    border: 1px solid #fff;
-    border: none transparent;
-    border-radius: 0.6rem;
-    background: #ff5a5f;
-    color: #fff;
-    text-align: center;
-    font-size: 0.48rem; }
 
-.bestpay-button:active {
-    background-color: #fff;
-    color: #ff5a5f;
-    border: 1px solid #ff5a5f;
-}
-
-.bestpay-button.white {
-    background-color: #fff;
-    color: #ff5a5f;
-    border: 1px solid #ff5a5f;
-}
-.bestpay-button.white:active {
-    background-color: #ff5a5f;
-    color: #fff;
-    border: 1px solid #fff;
-}
-/*button style end*/
-/*start forms*/
-.bestpay-input_warn {
-    color: #f13a20;
-    font-size: 0.346667rem;
-    margin-top: 0.266667rem;
-    padding-left: 0.4rem;
-    margin-bottom: 0.266667rem; }
-
-.bestpay-input_wrap {/*修改*/
-    /*padding-right: 10%;*/
-    /*padding-right:0.325rem;*/
-    padding-right:0.65rem;/*此处修改*/
-    position: relative; }
-.bestpay-input_wrap .clear {
-    position: absolute;
-    display: none;
-    /*width:30px; height:30px;*/
-    width: 1.4rem;
-    height: 1.4rem;
-    background-size: 35% 35%;
-    background-position: left , center;
-    top: 50%;
-    right: -0.533333rem;
-    /*margin-top:-15px;*/
-    margin-top: -0.7rem;
-    background-image: url(../img/icon_close.png); }
-
-/*end forms*/
-
-.halign{margin: 0 auto;}
-
-.comb-dialog{ width:7.2rem; position:fixed; height:auto; z-index:1000; margin:0 auto; top:50%; left:50%; margin-left:-3.6rem;}
-.bsb_cnt{background:#fff; position:relative;  width:100%;  /*border-radius:12px;*/border-radius:0.16rem; }
-.bsb_cnt ul{width:100%; max-height:440px; overflow:auto; -webkit-overflow-scrolling : touch;}
-.bsb_cnt li{width:90%; margin:0 auto; height:65px; line-height:65px; text-indent:30px; border-bottom:1px solid #d0d0d0; font-size:1.4em;}
-.bsb_cnt li.selected{color:#fb6f1b; border-bottom-color:#3baaff;}
-.bsb_cnt li.last{border-bottom:none;}
-.bsb_cnt footer{background:#fff; /*border-radius:12px;*/border-radius:0.16rem;}
-.bsb_cnt footer div{height:1.173333rem; line-height:1.173333rem; text-align:center; font-size:0.426667rem; }
-.bsb_cnt footer div.bright{border-right:1px solid #e6e6e6;}
-.bsb_cnt footer div.colorful{color:#ff5a5f;fon-weight:bold;}
-.bsb_cnt .text{padding:0.666667rem 0.666667rem; font-size:0.4rem; text-align:center; border-bottom:1px solid #e6e6e6; color:#808080; }
-/*遮罩背景*/
-.detail-bottom-bg {position:fixed;top:0;left:0;z-index:800;display:none;width:100%;height:100%;background:#636363;opacity:0.8;-moz-opacity:0.8;}
-
-.comb-dialog.loading{width:6.0rem; margin-left: -3rem;}
-.comb-dialog.loading .bsb_cnt{width:6.0rem; padding: 0.6rem 0;  text-align:center; font-size:0.32rem; color: #d5433e;}
-.comb-dialog.loading .c_img{margin:0.133333rem auto; width:2.213333rem;}
-.comb-dialog .c_img img{width:100%; height: 2.933333rem;}
-.comb-dialog .c_text{margin-bottom:0.133333rem;}
-.over-hide{overflow:hidden;}
-
-.f-30{font-size: 0.4rem; }
-
-.box_horizontal {
-  display: -moz-box;
-  display: -webkit-box;
-  display: box;
-  -moz-box-orient: horizontal;
-  -webkit-box-orient: horizontal;
-  box-orient: horizontal;
-  display: -moz-box
-}
-.ub-f1 {
-  -moz-box-flex: 1;
-  -webkit-box-flex: 1;
-  box-flex: 1
-}
-
-.main_width{width:10.0rem; margin:0 auto;}
+/*头部 begin*/
 .top{
-    width:100%; 
-    height:4.6rem;
+    width:100%;
+    height:4.2rem;
 }
 .t-bg{
     width:100%;
     height:3.466667rem;
-    background-color: #000;
+    background-color:#000;
     position:relative;
-    margin-bottom: -2.0rem;
+    margin-bottom:-2.0rem;
 }
-.t-bg .pic{position:absolute; left:0; bottom:-0.773333rem; height: 1.973333rem; width: 100%;}
-.coupon{width: 9.12rem; height: 2.133333rem; padding-top: 0.2rem; background-image: url(../img/couponbg.png); background-size: cover; margin: 0 auto;}
-.coupon .frame{width: 100%; height: 1.733333rem;}
-.coupon .frame .left{width: 2.0rem; border-right: 1px solid #f0f0f0;}
-.coupon .frame .left .c-img{display: block; margin: 0.333333rem auto 0.066667rem auto; width: 0.64rem; height: 0.64rem;}
-.coupon .frame .left .c-amount{color: #faf61c; font-size: 0.4rem; text-align: center;}
-.coupon .frame .right{padding-left: 0.4rem; padding-top: 0.4rem;}
-.coupon .frame .c-text{color: #fff; font-size: 0.4rem; margin-bottom: 0.293333rem;}
-.coupon .frame .c-date{color: #c6c6c6; font-size: 0.373333rem;}
-.coupon .f-30{margin-top: 0.44rem;}
-.btngrp{width: 8.666667rem; margin-top: 1.666667rem;}
-.btngrp .bestpay-button.white{margin-top: 0.56rem; margin-bottom: 0.426667rem;}
-.c-gray{width: 100%; height: 0.933333rem; line-height: 0.933333rem; padding-left: 0.4rem; background-color: #f5f5f5; font-size: 0.4rem; color: #808080;}
-.m-list li{list-style-type: none; position: relative; height: 1.733333rem; width: 100%; border-bottom: 1px solid #e6e6e6;}
-.m-list li .left{}
-.m-list li:last-child{border-bottom: none;}
+.t-bg .pic{ position:absolute; left:0; bottom:-0.773333rem; height:1.973333rem; width:100%; }
+/*头部 end*/
 
-.i-container {
-    height: 60%;
-    top: 20%;
-    padding-left: 0.4rem;
+/*字号、颜色、间距 begin */
+.over-hide{ overflow:hidden; }
+.f-55{ font-size:0.733333rem; }
+.f-50{ font-size:0.666667rem; }
+.f-40{ font-size:0.533333rem; }
+.f-35{ font-size:0.466667rem; }
+.f-30{ font-size:0.4rem; }
+.f-28{ font-size:0.373333rem; }
+.f-25{ font-size:0.333333rem; }
+.fc-gray{ color:#b2b2b2; }
+.fc-white{color: #fff;}
+.fc-yellow{color: #FFF917;}
+.fc-black{ color:#3f3f3f; }
+.talign{ text-align:center; }
+.m-top-80{ margin-top:1.066667rem; }
+.m-top-55{ margin-top:0.733333rem; }
+.m-top-50{ margin-top:0.666667rem; }
+.m-top-40{ margin-top:0.533333rem; }
+.m-top-35{ margin-top:0.466667rem; }
+.m-top-30{ margin-top:0.4rem; }
+.m-top-22{ margin-top:0.293333rem; }
+.m-top-20{ margin-top:0.266667rem; }
+.m-btm-42{ margin-bottom:0.56rem; }
+.m-btm-30{ margin-bottom:0.4rem; }
+.m-btm-20{ margin-bottom:0.266667rem; }
+.m-top-106{ margin-top:1.413333rem; }
+.tlink{ text-decoration:underline; color:#ff5a5f; cursor:pointer; }
+.bline{border-bottom: 1px solid #e6e6e6;}
+/*字号、颜色、间距 end */
+
+.redframe{background-color: #ff5a5f; margin: 0.4rem auto 1.5rem auto; padding: 0.666667rem 0.453333rem 0.613333rem 0.453333rem; border-radius: 0.133333rem; width: 9.426667rem;}
+
+/*button style start*/
+.bestpay-button{
+    font-family:inherit;
+    text-decoration:none;
+    width:8.666667rem;
+    height:1.2rem;
+    line-height:1.2rem;
+    border:1px solid #fff;
+    border:none transparent;
+    border-radius:0.6rem;
+    background:#ff5a5f;
+    color:#fff;
+    text-align:center;
+    font-size: 0.426667rem;
+     }
+.bestpay-button:active{
+    background-color:#fff;
+    color:#ff5a5f;
+    border:1px solid #ff5a5f;
+}
+.bestpay-button.white{
+    background-color:#fff;
+    color:#ff5a5f;
+    border:1px solid #ff5a5f;
+}
+.bestpay-button.white:active{
+    background-color:#ff5a5f;
+    color:#fff;
+    border:1px solid #fff;
+}
+.bestpay-button.small{width: 4.0rem; height: 1.32rem; line-height: 1.32rem; border-radius: 0.666667rem;}
+.bestpay-button.rect{border-radius: 0.133333rem; margin-left: 0.24rem; height: 1.33333rem; line-height: 1.33333rem; width: 2.533333rem; display: inline-block;}
+.bestpay-button.rect:active{background-color: #fff; color: #ff5a5f; border:1px solid #ff5a5f;}
+/*button style end*/
+
+/*start forms*/
+.bestpay-input{font-size: 0.426667rem; width: 8.533333rem; padding: 0.4rem 0.213333rem; border: none; border-radius: 0.133333rem;}
+.bestpay-input.small{width:5.75rem;}
+.bestpay-input_warn{
+    color:#f13a20;
+    font-size:0.346667rem;
+    margin-top:0.266667rem;
+    padding-left:0.4rem;
+    margin-bottom:0.266667rem; }
+.bestpay-input_wrap{ /*修改*/
+    /*padding-right: 10%;*/
+    /*padding-right:0.325rem;*/
+    padding-right:0.65rem; /*此处修改*/
+    position:relative; }
+.bestpay-input_wrap .clear{
+    position:absolute;
+    display:none;
+    /*width:30px; height:30px;*/
+    width:1.4rem;
+    height:1.4rem;
+    background-size:35% 35%;
+    background-position:left, center;
+    top:50%;
+    right:-0.533333rem;
+    /*margin-top:-15px;*/
+    margin-top:-0.7rem;
+    background-image:url(../img/icon_close.png); }
+/*end forms*/
+
+/*水平布局 begin */
+.box_horizontal{
+    display:-moz-box;
+    display:-webkit-box;
+    display:box;
+    -moz-box-orient:horizontal;
+    -webkit-box-orient:horizontal;
+    box-orient:horizontal;
+    display:-moz-box
+}
+.ub-f1{
+    -moz-box-flex:1;
+    -webkit-box-flex:1;
+    box-flex:1
+}
+/*水平布局 end */
+
+/*Dialog begin */
+.halign{ margin:0 auto; }
+.comb-dialog{ width:7.2rem; position:fixed; height:auto; z-index:1000; margin:0 auto; top:50%; left:50%; margin-left:-3.6rem; }
+.bsb_cnt{ background:#fff; position:relative; width:100%; /*border-radius:12px;*/ border-radius:0.16rem; }
+.bsb_cnt ul{ width:100%; max-height:440px; overflow:auto; -webkit-overflow-scrolling:touch; }
+.bsb_cnt li{ width:90%; margin:0 auto; height:65px; line-height:65px; text-indent:30px; border-bottom:1px solid #d0d0d0; font-size:1.4em; }
+.bsb_cnt li.selected{ color:#fb6f1b; border-bottom-color:#3baaff; }
+.bsb_cnt li.last{ border-bottom:none; }
+.bsb_cnt footer{ background:#fff; /*border-radius:12px;*/ border-radius:0.16rem; }
+.bsb_cnt footer div{ height:1.173333rem; line-height:1.173333rem; text-align:center; font-size:0.426667rem; }
+.bsb_cnt footer div.bright{ border-right:1px solid #e6e6e6; }
+.bsb_cnt footer div.colorful{ color:#ff5a5f; fon-weight:bold; }
+.bsb_cnt .text{ padding:0.666667rem 0.666667rem; font-size:0.4rem; text-align:center; border-bottom:1px solid #e6e6e6; color:#808080; }
+.detail-bottom-bg{ position:fixed; top:0; left:0; z-index:800; display:none; width:100%; height:100%; background:#636363; opacity:0.8; -moz-opacity:0.8; }
+.comb-dialog.loading{ width:6.0rem; margin-left:-3rem; }
+.comb-dialog.loading .bsb_cnt{ width:6.0rem; padding:0.6rem 0; text-align:center; font-size:0.32rem; color:#d5433e; }
+.comb-dialog.loading .c_img{ margin:0.133333rem auto; width:2.213333rem; }
+.comb-dialog .c_img img{ width:100%; height:2.933333rem; }
+.comb-dialog .c_text{ margin-bottom:0.133333rem; }
+/*Dialog end */
+
+/*领券成功 begin*/
+.main_width{ width:10.0rem; margin:0 auto; }
+.coupon{ width:9.12rem; height:2.133333rem; padding-top:0.2rem; background-image:url(../img/couponbg.png); background-size:cover; margin:0 auto; }
+.coupon .frame{ width:100%; height:1.733333rem; position: relative;}
+.coupon .frame .left{ width:2.0rem; border-right:1px solid #f0f0f0; }
+.c-img{width:0.64rem; height:0.64rem;}
+.coupon .frame .left .c-img{ display:block; margin:0.333333rem auto 0.026667rem auto; }
+.coupon .frame .left .c-amount{ color:#faf61c; font-size:0.466667rem; text-align:center; }
+.coupon .frame .right{ padding-left:0.4rem; padding-top:0.4rem; }
+.coupon .frame .c-text{position: absolute; top: 0.266667rem; color:#fff; font-size:0.4rem; margin-bottom:0.293333rem; }
+.coupon .frame .c-date{position: absolute; bottom: 0.266667rem; color:#c6c6c6; font-size:0.373333rem; }
+.coupon .f-30{ margin-top:0.44rem; }
+.btngrp{ width:8.666667rem; margin-top:1.666667rem; }
+.btngrp .bestpay-button.white{ margin-top:0.56rem; margin-bottom:0.426667rem; }
+.c-gray{ width:100%; height:1.04rem; line-height:1.04rem; padding-left:0.4rem; background-color:#f5f5f5; font-size:0.4rem; color:#808080; }
+/*领券成功 end*/
+
+/*列表 begin*/
+.m-list li{ list-style-type:none; position:relative; height:1.733333rem; width:100%; border-top:1px solid #e6e6e6; }
+.i-container{
+    height:60%;
+    top:20%;
+    padding-left:0.4rem;
     position:relative;
 }
-.top-text {
-    position: absolute;
-    font-size: 0.4rem;
-    top: 0;
+.top-text{
+    position:absolute;
+    font-size:0.4rem;
+    top:0;
 }
-.btm-text {
-    position: absolute;
-    font-size: 0.373333rem;
-    color: #b2b2b2;
-    bottom: 0;
+.btm-text{
+    position:absolute;
+    font-size:0.373333rem;
+    color:#b2b2b2;
+    bottom:0;
 }
-.r-text {
-  right: 0.4rem;
+.r-text{
+    right:0.4rem;
 }
-.footer{height: 1.666667rem; width: 100%; background-color: #f5f5f5;}
+.btm-text.r-text{
+    color:#F7E00B;
+}
+/*列表 end*/
+
+.playdesc{text-align: center; margin-bottom: 0.4rem; font-size: 0.4rem; color: #b2b2b2; cursor: pointer;}
+.footer{ height:1.666667rem; width:100%; background-color:#f5f5f5; border-top:1px solid #e6e6e6; }
 
 
 
