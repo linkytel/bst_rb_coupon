@@ -107,6 +107,12 @@ img{
     color:#fff;
     border:1px solid #fff;
 }
+.bestpay-button:disabled{
+    background-color:#d7d7d7;
+    color:#fff;
+    border:1px solid #d7d7d7;
+    background-clip: padding-box;
+}
 .bestpay-button.small{width: 4.0rem; height: 1.32rem; line-height: 1.32rem; border-radius: 0.666667rem;}
 .bestpay-button.rect{border-radius: 0.133333rem; margin-left: 0.24rem; height: 1.33333rem; line-height: 1.33333rem; width: 2.533333rem; display: inline-block;}
 .bestpay-button.rect:active{background-color: #fff; color: #ff5a5f; border:1px solid #ff5a5f;}
@@ -139,7 +145,17 @@ img{
     /*margin-top:-15px;*/
     margin-top:-0.7rem;
     background-image:url(../img/icon_close.png); }
+
+.contain{
+    background-size:contain;
+    -webkit-background-size:contain;
+}
+
+.norepeat{
+    background-repeat:no-repeat;
+}
 /*end forms*/
+
 
 /*水平布局 begin */
 .box_horizontal{

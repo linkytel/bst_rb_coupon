@@ -28,17 +28,17 @@
     <div class="m-top-50 bline"></div>
 
     <!-- 领取红包 begin -->
-    <div class="redframe">
+    <div id="redbagphone " class="redframe">
         <div class="f-50 fc-yellow talign">
             <img class="c-img" src="img/tagrec.png" /> 代金券红包
         </div>
-        <div class="m-top-55"><input class="bestpay-input" id="txtPhone" placeholder="请输入手机号领取您的红包" /></div>
-        <div class="m-top-40 talign"><button class="bestpay-button white small halign">马上领取</button></div>
+        <div class="m-top-55 bestpay-input_wrap"><input class="bestpay-input " id="txtPhone" placeholder="请输入手机号领取您的红包" /></div>
+        <div class="m-top-40 talign"><button id="getphone" class="bestpay-button white small halign">马上领取</button></div>
     </div>
     <!-- 领取红包 end -->
 
     <!-- 输入验证码确认 begin -->
-    <div class="redframe hide">
+    <div id="redbagkey" class="redframe hide">
         <div class="f-50 fc-yellow talign">
             <img class="c-img" src="img/tagrec.png" /> 代金券红包
         </div>
@@ -49,15 +49,15 @@
             <span class="fc-yellow">修改&gt;</span></div>
         </div>
         <div class="m-top-30 box_horizontal">
-            <div>
+            <div class="bestpay-input_wrap">
             <input class="bestpay-input small" id="txtSms" placeholder="请输入验证码" />
             </div>
             <div>
-            <div class="bestpay-button white rect">60s</div>
+            <div id="getkey" class="bestpay-button white rect">60s</div>
             </div>
         </div>
         <div class="m-top-40 talign">
-            <button class="bestpay-button white small halign">确认</button>
+            <button id="getverity" class="bestpay-button white small halign">确认</button>
         </div>
     </div>
     <!-- 输入验证码确认 end -->
@@ -71,6 +71,7 @@
 
 </body>
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/best-coupon.js"></script>
 <script type="text/javascript" src="js/fastclick.js"></script>
 <script type="text/javascript" src="js/flexible.js"></script>
 <script type="text/javascript" src="js/flexible_css.js"></script>
