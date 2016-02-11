@@ -110,6 +110,90 @@ var Util = {
                 Util.Events.reBindEvent(_selector, _func, "click");
             }
         }
+    },
+    Http:{
+        sendPostRequestSSL: function (reqMap) {
+            var name = "ran" + Math.floor(Math.random() * 100 + 1);
+            var value = Date.parse(new Date());
+            reqMap.url = reqMap.url + "?" + name + "=" + value;
+
+            var err_cbk = reqMap.error_callback || function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.error("接口调用失败:" + JSON.stringify(XMLHttpRequest));
+                    return;
+                }
+
+            var succ_cbk = function(result){
+                console.log('get [' + reqMap.url + '] result:' + JSON.stringify(result));
+                reqMap.success_callback(result);
+            }
+            try {
+                var ajaxObj = $.ajax({
+                    url: reqMap.url,
+                    data: JSON.stringify(reqMap.params),
+                    contentType: "application/json",
+                    type: "POST",
+                    timeout: 60000,
+                    dataType: "json",
+                    async: true,
+                    success: succ_cbk,
+                    error: err_cbk
+                });
+            } catch (e) {
+                console.error("接口调用异常:" + e.message);
+            }
+        }
+    },
+    CountDown: {
+        countdownId: null,
+        minuteSeconds: 60,
+        hourSeconds: 60 * 60,
+        daySeconds: 60 * 60 * 24,
+        /**
+         * 倒计时函数
+         * @param {} totalSeconds    总秒数
+         * @param {} timespan    倒计时step，一般传1
+         * @param {} callback    倒计时秒数更新时的回调函数
+         * @param {} endcallback    倒计时结束时的回调函数
+         * @returns {}
+         */
+        start: function (totalSeconds, timespan, callback, endcallback) {
+            if (totalSeconds < 0)
+                totalSeconds = 0;
+            //年月暂时不处理
+            var years = 0;
+            var months = 0;
+
+            var days = parseInt(totalSeconds / Util.CountDown.daySeconds);
+            var lastSecond = totalSeconds % Util.CountDown.daySeconds;
+            var hours = parseInt(lastSecond / Util.CountDown.hourSeconds);
+            lastSecond %= Util.CountDown.hourSeconds;
+            var minutes = parseInt(lastSecond / Util.CountDown.minuteSeconds);
+            lastSecond %= Util.CountDown.minuteSeconds;
+            var seconds = lastSecond;
+            if (callback) {
+                callback(years, months, days, hours, minutes, seconds);
+            }
+            if (!years && !months && !days && !months && !hours && !minutes && !seconds) {
+                if (endcallback) {
+                    endcallback();
+                }
+            }
+            else {
+                Util.CountDown.countdownId = setTimeout(function () {
+                    Util.CountDown.start(totalSeconds - timespan, timespan, callback, endcallback);
+                }, timespan * 1000);
+            }
+        },
+
+        /**
+         * 停止倒计时
+         */
+        stop: function () {
+            if (Util.CountDown.countdownId != null) {
+                clearTimeout(Util.CountDown.countdownId);
+                Util.CountDown.countdownId = null;
+            }
+        }
     }
 }
 

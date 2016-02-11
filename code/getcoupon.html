@@ -21,39 +21,45 @@
     <!--头部 end -->
 
     <div class="talign">
-        <div class="f-30"><span class="fc-black">张三儿</span> <span class="fc-gray">发的红包</span></div>
+        <div class="f-30">
+            <span class="fc-black">张三儿</span> <span class="fc-gray">发的红包</span>
+        </div>
         <div class="f-28 fc-gray m-top-20">翼支付为您送上大红包</div>
         <div class="f-50 m-top-50 fc-black">500.00元</div>
     </div>
     <div class="m-top-50 bline"></div>
 
     <!-- 领取红包 begin -->
-    <div id="redbagphone " class="redframe">
+    <div id="redbagphone" class="redframe">
         <div class="f-50 fc-yellow talign">
-            <img class="c-img" src="img/tagrec.png" /> 代金券红包
+            <img class="c-img" src="img/tagrec.png"/> 代金券红包
         </div>
-        <div class="m-top-55 bestpay-input_wrap"><input class="bestpay-input " id="txtPhone" placeholder="请输入手机号领取您的红包" /></div>
-        <div class="m-top-40 talign"><button id="getphone" class="bestpay-button white small halign">马上领取</button></div>
+        <div class="m-top-55 bestpay-input_wrap">
+            <input class="bestpay-input " type="tel" id="txtPhone" maxlength="11" placeholder="请输入手机号领取您的红包"/>
+        </div>
+        <div class="m-top-40 talign">
+            <button id="getphone" class="bestpay-button white small halign">马上领取</button>
+        </div>
     </div>
     <!-- 领取红包 end -->
 
     <!-- 输入验证码确认 begin -->
     <div id="redbagkey" class="redframe hide">
         <div class="f-50 fc-yellow talign">
-            <img class="c-img" src="img/tagrec.png" /> 代金券红包
+            <img class="c-img" src="img/tagrec.png"/> 代金券红包
         </div>
         <div class="m-top-35 fc-white f-30 talign">
             <div>已发送验证码到您的手机</div>
-            <div class="m-top-20">17091310737 
-            &nbsp;
-            <span class="fc-yellow">修改&gt;</span></div>
+            <div class="m-top-20"><span id="phoneSpan">17091310737</span>
+                &nbsp;
+                <span id="reInput" class="fc-yellow">修改&gt;</span></div>
         </div>
         <div class="m-top-30 box_horizontal">
             <div class="bestpay-input_wrap">
-            <input class="bestpay-input small" id="txtSms" placeholder="请输入验证码" />
+                <input type="tel" class="bestpay-input small" maxlength="6" id="txtSms" placeholder="请输入验证码"/>
             </div>
             <div>
-            <div id="getkey" class="bestpay-button white rect">60s</div>
+                <button id="getkey" class="bestpay-button white rect">发送</button>
             </div>
         </div>
         <div class="m-top-40 talign">
@@ -71,10 +77,15 @@
 
 </body>
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="js/best-coupon.js"></script>
 <script type="text/javascript" src="js/fastclick.js"></script>
 <script type="text/javascript" src="js/flexible.js"></script>
 <script type="text/javascript" src="js/flexible_css.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/best-coupon.js"></script>
+<script type="text/javascript">
+    $(function () {
+        couopnGet.init();
+    });
+</script>
 </html>
 

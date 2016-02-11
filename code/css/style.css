@@ -130,7 +130,6 @@ img{
 .bestpay-input_wrap{ /*修改*/
     /*padding-right: 10%;*/
     /*padding-right:0.325rem;*/
-    padding-right:0.65rem; /*此处修改*/
     position:relative; }
 .bestpay-input_wrap .clear{
     position:absolute;
