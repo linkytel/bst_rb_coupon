@@ -10,6 +10,9 @@ function CouponGet() {
     this.reInputButton = $("#reInput");
     this.phoneFrame = $("#redbagphone");
     this.smsFrame = $("#redbagkey");
+    this.smsVerifyInput = false;
+    this.phoneVerityInput = false;
+    this.fullphoneNum;
 };
 
 /**
@@ -29,13 +32,32 @@ CouponGet.prototype.init = function () {
         couopnGet.phoneFrame.show();
     });
 
+    //手机号确认按钮事件
+    this.phoneButton.click(function () {
+        if( couopnGet.phoneVerityInput == true ){
+            couopnGet.phoneSpan.html(couopnGet.fullphoneNum);
+            couopnGet.phoneFrame.hide();
+            couopnGet.smsFrame.show();
+
+            //remark: 此处不能用ajax直接请求短信接口，而应该调用红包平台，让红包平台发送
+            couopnGet.sendSms();
+        }    
+    });
+
+    //短信按钮确认事件
+    this.submitButton.click(function () {
+        if( couopnGet.smsVerifyInput == true){
+            
+        }
+    });
+
     //文本框通用事件
     $(".bestpay-input").bind("focus", commonFunc.showInputClear)
         .bind("input", commonFunc.showInputClear)
         .bind("blur", function () {
             setTimeout(function () {
                 commonFunc.hideInputClear();
-            }, 2)
+            }, 200)
         });
     $("#clearInput").bind("click", commonFunc.clearEvent);
 }
@@ -48,16 +70,11 @@ CouponGet.prototype.phoneVerity = function () {
     var phoneNum = couopnGet.phoneInput.val();
     if (phoneNum.length == 11 && REGEX.mobilePhone.test(phoneNum)) {
         couopnGet.phoneButton.removeAttr("disabled");
-        couopnGet.phoneButton.click(function () {
-            couopnGet.phoneSpan.html(phoneNum);
-            couopnGet.phoneFrame.hide();
-            couopnGet.smsFrame.show();
-
-            //remark: 此处不能用ajax直接请求短信接口，而应该调用红包平台，让红包平台发送
-            couopnGet.sendSms();
-        });
+        couopnGet.fullphoneNum = phoneNum;
+        couopnGet.phoneVerityInput = true;
     } else {
         couopnGet.phoneButton.attr("disabled", "disabled");
+        couopnGet.phoneVerityInput = false;
     }
 }
 
@@ -69,11 +86,10 @@ CouponGet.prototype.smsVerify = function () {
     var val = $("#txtSms").val();
     if (val.length >= 6) {
         couopnGet.submitButton.removeAttr("disabled");
-        couopnGet.submitButton.click(function () {
-
-        });
+        couopnGet.smsVerifyInput = true;
     } else {
         couopnGet.submitButton.attr("disabled", "disabled");
+        couopnGet.smsVerifyInput = false;
     }
 }
 
@@ -109,6 +125,10 @@ var commonFunc = {
     },
     clearEvent: function () { //判断文本框clear事件
         console.log("clearEvent");
+        couopnGet.phoneVerityInput = false;
+        couopnGet.smsVerifyInput = false;
+        couopnGet.phoneButton.attr("disabled", "disabled");
+        couopnGet.submitButton.attr("disabled", "disabled");
         var _input = $(this).prev(".bestpay-input");
         _input.val("").focus();//回弹键盘
     },
